@@ -14,9 +14,9 @@ public class ReportService {
     public void generateReport(String reportId) {
         // Simulasi proses generasi laporan
         try {
-            reportStatus.put(reportId, "Sedang digenerate"); // kalau berhasil ke case 1
+            reportStatus.put(reportId, "Sedang digenerate"); // munculkan ini saat sedang generate
             Thread.sleep(10000); // Simulasi proses generasi laporan selama 10 detik
-            reportStatus.put(reportId, "Berhasil digenerate");
+            reportStatus.put(reportId, "Berhasil digenerate"); // setelah berhasil
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             reportStatus.put(reportId, "Gagal digenerate");
