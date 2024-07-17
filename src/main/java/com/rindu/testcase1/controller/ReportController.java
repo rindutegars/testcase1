@@ -16,7 +16,7 @@ public class ReportController {
     @PostMapping("/generate")
     public ResponseEntity<String> generateReport(@RequestParam String reportId) {
         reportService.generateReport(reportId);
-        return ResponseEntity.ok("Proses generasi laporan dengan ID " + reportId + " telah dimulai.");
+        return ResponseEntity.ok("Generate laporan dengan ID " + reportId + " sedang di proses");
     }
 
     @GetMapping("/check-status/{reportId}")
