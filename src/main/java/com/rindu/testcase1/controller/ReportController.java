@@ -1,7 +1,6 @@
 package com.rindu.testcase1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +21,7 @@ public class ReportController {
 
     @GetMapping("/check-status/{reportId}")
     public ResponseEntity<String> checkReportStatus(@PathVariable String reportId) {
-        // Logika untuk memeriksa status generasi laporan
-        return ResponseEntity.ok("Laporan dengan ID " + reportId + " sedang digenerate...");
+        String status = reportService.getReportStatus(reportId);
+        return ResponseEntity.ok("Status laporan dengan ID " + reportId + ": " + status);
     }
 }
